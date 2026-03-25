@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sovereign Intel | AI Engineering at ICICI AMC</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&amp;family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-secondary-container": "#511500",
+              "on-error": "#690005",
+              "secondary": "#ffb59c",
+              "surface": "#051425",
+              "surface-container": "#122032",
+              "on-background": "#d5e3fc",
+              "tertiary-fixed": "#e9ddff",
+              "on-primary-fixed": "#40000d",
+              "outline": "#a48b8b",
+              "surface-container-lowest": "#010f20",
+              "on-tertiary": "#3c0091",
+              "surface-container-low": "#0d1c2e",
+              "secondary-container": "#fa5c1c",
+              "primary-fixed": "#ffdadb",
+              "error": "#ffb4ab",
+              "inverse-on-surface": "#233144",
+              "secondary-fixed": "#ffdbcf",
+              "secondary-fixed-dim": "#ffb59c",
+              "on-secondary-fixed-variant": "#832700",
+              "surface-container-high": "#1d2b3d",
+              "primary-fixed-dim": "#ffb2b7",
+              "primary": "#ffb2b7",
+              "on-tertiary-fixed-variant": "#5516be",
+              "primary-container": "#7a192a",
+              "surface-tint": "#ffb2b7",
+              "on-secondary": "#5c1900",
+              "on-surface": "#d5e3fc",
+              "outline-variant": "#564242",
+              "on-tertiary-fixed": "#23005c",
+              "on-surface-variant": "#ddc0c0",
+              "inverse-primary": "#a43947",
+              "surface-dim": "#051425",
+              "on-tertiary-container": "#b79aff",
+              "on-primary-container": "#ff8791",
+              "on-primary": "#65061c",
+              "surface-bright": "#2c3a4d",
+              "tertiary-fixed-dim": "#d0bcff",
+              "on-error-container": "#ffdad6",
+              "tertiary-container": "#4d00b7",
+              "on-primary-fixed-variant": "#842131",
+              "surface-variant": "#283648",
+              "inverse-surface": "#d5e3fc",
+              "background": "#051425",
+              "on-secondary-fixed": "#390c00",
+              "surface-container-highest": "#283648",
+              "tertiary": "#d0bcff",
+              "error-container": "#93000a"
+            },
+            fontFamily: {
+              "headline": ["Inter"],
+              "body": ["Inter"],
+              "label": ["Space Grotesk"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #051425;
+            color: #d5e3fc;
+            font-family: 'Inter', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-nav {
+            backdrop-filter: blur(20px);
+            background: rgba(5, 20, 37, 0.8);
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 1.5rem;
+        }
+        .glow-hover:hover {
+            box-shadow: 0 0 20px rgba(250, 92, 28, 0.15);
+        }
+    </style>
+</head>
+<body class="selection:bg-secondary-container selection:text-white">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#051425]/80 backdrop-blur-xl shadow-2xl shadow-[#010F20]/50">
+<div class="flex items-center justify-between px-8 py-4 max-w-screen-2xl mx-auto">
+<div class="font-['Inter'] font-black text-xl tracking-tighter text-slate-100 flex items-center gap-2">
+<span class="w-8 h-8 bg-primary-container rounded flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-sm" data-icon="terminal">terminal</span>
+</span>
+                Sovereign Intel
+            </div>
+<div class="hidden md:flex items-center gap-8 font-['Inter'] font-medium tracking-tight text-sm">
+<a class="text-[#FA5C1C] font-bold" href="#">Projects</a>
+<a class="text-slate-400 hover:text-slate-100 transition-colors" href="#">Platform</a>
+<a class="text-slate-400 hover:text-slate-100 transition-colors" href="#">Impact</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="px-5 py-2 rounded-xl bg-primary-container text-on-primary-container font-label font-bold text-xs uppercase tracking-widest hover:bg-secondary-container transition-all active:scale-95 duration-200 cursor-pointer">
+                    Connect
+                </button>
+</div>
+</div>
+<div class="bg-[#0D1C2E] h-[1px] w-full opacity-20"></div>
+</nav>
+<main class="pt-24">
+<!-- Hero Section -->
+<section class="relative min-h-[819px] flex flex-col items-center justify-center px-6 overflow-hidden">
+<div class="absolute inset-0 z-0 opacity-30">
+<div class="absolute inset-0 bg-gradient-to-b from-primary-container/20 to-transparent"></div>
+<!-- Simulated Neural Connections Pattern -->
+<svg class="w-full h-full" preserveaspectratio="none" viewbox="0 0 100 100">
+<path class="text-primary opacity-20" d="M0,50 Q25,40 50,50 T100,50" fill="none" stroke="currentColor" stroke-width="0.1"></path>
+<path class="text-secondary opacity-20" d="M0,30 Q25,20 50,30 T100,30" fill="none" stroke="currentColor" stroke-width="0.1"></path>
+<path class="text-primary opacity-20" d="M0,70 Q25,60 50,70 T100,70" fill="none" stroke="currentColor" stroke-width="0.1"></path>
+</svg>
+</div>
+<div class="relative z-10 text-center max-w-4xl">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-high border border-outline-variant/15 mb-6">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary-container opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-secondary-container"></span>
+</span>
+<span class="font-label text-[10px] uppercase tracking-[0.2em] text-on-surface-variant">Engineering Sovereignty</span>
+</div>
+<h1 class="font-headline font-black text-6xl md:text-8xl tracking-tighter text-white mb-6 leading-[0.9]">
+                    AI Engineer <br/>
+<span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-container via-secondary-container to-primary-fixed-dim">@ ICICI AMC</span>
+</h1>
+<p class="font-body text-lg md:text-xl text-on-surface-variant max-w-2xl mx-auto mb-10 leading-relaxed">
+                    Architecting Agentic Workflows &amp; Generative AI Solutions for India's Leading Asset Management Firm.
+                </p>
+<div class="flex flex-col md:flex-row gap-4 justify-center items-center">
+<button class="group relative px-8 py-4 bg-primary-container rounded-xl overflow-hidden transition-all hover:shadow-[0_0_40px_-10px_rgba(250,92,28,0.5)]">
+<div class="absolute inset-0 bg-gradient-to-r from-primary-container to-secondary-container opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<span class="relative z-10 font-label font-bold text-sm tracking-widest text-white uppercase">Initialize Simulation</span>
+</button>
+<button class="px-8 py-4 bg-surface-container border border-outline-variant/15 rounded-xl font-label font-bold text-sm tracking-widest text-on-surface uppercase hover:bg-surface-container-high transition-colors">
+                        Documentation
+                    </button>
+</div>
+</div>
+</section>
+<!-- Featured Project Bento Grid -->
+<section class="max-w-screen-2xl mx-auto px-8 py-24">
+<div class="flex justify-between items-end mb-12">
+<div>
+<h2 class="font-headline font-extrabold text-4xl tracking-tighter text-white mb-2">Core 4 Integrations</h2>
+<p class="font-label text-sm text-on-surface-variant uppercase tracking-widest">Production-grade Agentic Architectures</p>
+</div>
+<div class="hidden md:block h-[1px] flex-grow mx-12 bg-outline-variant/15"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6 auto-rows-[280px]">
+<!-- Compliance Assist (RAG) -->
+<div class="md:col-span-8 bg-surface-container-low rounded-xl p-8 flex flex-col justify-between group overflow-hidden relative">
+<div class="absolute top-0 right-0 w-1/2 h-full opacity-10 group-hover:opacity-20 transition-opacity">
+<img alt="complex visual representation of a document vector store and retrieval process" class="w-full h-full object-cover grayscale brightness-50" data-alt="abstract visual of interconnected nodes and glowing data points representing a RAG architecture and document storage" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB50iVXTp0PqZPFkUPDFmcnwl2OXy4ap1O7f8ClLC8z6UiKAr-GN35FG9JkVEuUoxtN4nxItZMprrhFMSAX7HdpcNb-mRvfTMd-0C7QTKiMgzVdApn9d7kEkGABPFPojqgpM8f1qN0d_34XGxA4Lhz5RZZe5bg7Me5NNPt7XYwlNDsoc3a_kndh90uFwry6MRidiNBchSQou5yYUDtQYemHji0bI4psyXuRmMHz0VfcxxtmsBkCwfcXRMYrREi4ICo1-h7HsC5KfJxj"/>
+</div>
+<div>
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-secondary-container" data-icon="security">security</span>
+<span class="font-label text-xs uppercase tracking-widest text-secondary-container">LegalTech / RAG</span>
+</div>
+<h3 class="font-headline font-bold text-3xl text-white mb-4 tracking-tight">Compliance Assist</h3>
+<p class="font-body text-on-surface-variant max-w-md">
+                            Autonomous text extraction and analysis over 1,500+ SEBI regulatory documents. Optimized for precision and zero-hallucination outputs.
+                        </p>
+</div>
+<div class="flex gap-4 items-center">
+<span class="px-3 py-1 bg-surface-container-high rounded-full font-label text-[10px] text-white">Google File Search Store</span>
+<span class="px-3 py-1 bg-surface-container-high rounded-full font-label text-[10px] text-white">Gemini Pro</span>
+</div>
+</div>
+<!-- Marketing Automation -->
+<div class="md:col-span-4 bg-surface-container rounded-xl p-8 flex flex-col justify-between hover:bg-surface-container-high transition-colors cursor-pointer">
+<div>
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-primary-container" data-icon="campaign">campaign</span>
+</div>
+<h3 class="font-headline font-bold text-xl text-white mb-2 tracking-tight">Marketing Portal</h3>
+<p class="font-body text-sm text-on-surface-variant">
+                            Full-stack GenAI engine for Investor Communications.
+                        </p>
+</div>
+<div class="space-y-4">
+<div class="flex gap-2 flex-wrap">
+<span class="px-2 py-1 bg-surface-container-low rounded font-label text-[10px] text-on-surface-variant">LangChain</span>
+<span class="px-2 py-1 bg-surface-container-low rounded font-label text-[10px] text-on-surface-variant">Python</span>
+</div>
+</div>
+</div>
+<!-- Agentic UI/UX (n8n) -->
+<div class="md:col-span-4 bg-surface-container rounded-xl p-8 flex flex-col justify-between border-t border-transparent hover:border-secondary-container/30 transition-all">
+<div>
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-secondary-container" data-icon="hub">hub</span>
+</div>
+<h3 class="font-headline font-bold text-xl text-white mb-2 tracking-tight">Agentic UI/UX</h3>
+<p class="font-body text-sm text-on-surface-variant">
+                            Automated enhancement of 450+ client mailers via agentic workflows. Reduced manual review time by 95%.
+                        </p>
+</div>
+<div class="flex items-center justify-between">
+<span class="font-label text-[10px] text-secondary-container uppercase font-bold tracking-widest">n8n Orchestration</span>
+<span class="material-symbols-outlined text-on-surface-variant text-sm" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+<!-- Outbound SIP Voice Bot -->
+<div class="md:col-span-8 bg-surface-container-highest rounded-xl p-8 flex flex-col md:flex-row gap-8 items-center relative overflow-hidden">
+<div class="flex-1 z-10">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-[#FFB2B7]" data-icon="settings_voice">settings_voice</span>
+<span class="font-label text-xs uppercase tracking-widest text-primary-fixed-dim">Real-time Conversational AI</span>
+</div>
+<h3 class="font-headline font-bold text-3xl text-white mb-4 tracking-tight">Outbound SIP Bot</h3>
+<p class="font-body text-on-surface-variant mb-6">
+                            Human-like voice agent for SIP renewals. Handles real-time objections and complex financial queries in 8 regional languages.
+                        </p>
+<div class="grid grid-cols-2 gap-4">
+<div class="flex items-center gap-2">
+<div class="w-1 h-1 rounded-full bg-secondary"></div>
+<span class="font-label text-[11px] text-white">Livekit WebRTC</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-1 h-1 rounded-full bg-secondary"></div>
+<span class="font-label text-[11px] text-white">ElevenLabs TTS</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-1 h-1 rounded-full bg-secondary"></div>
+<span class="font-label text-[11px] text-white">Gemini 1.5 Flash</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-1 h-1 rounded-full bg-secondary"></div>
+<span class="font-label text-[11px] text-white">Sarvam AI</span>
+</div>
+</div>
+</div>
+<div class="hidden md:block w-48 h-48 bg-gradient-to-br from-primary-container/40 to-secondary-container/20 rounded-full blur-3xl absolute -right-10 -bottom-10"></div>
+</div>
+</div>
+</section>
+<!-- Platform Ecosystem Section -->
+<section class="bg-surface-container-lowest py-24 relative overflow-hidden">
+<div class="max-w-screen-2xl mx-auto px-8">
+<div class="text-center mb-20">
+<h2 class="font-headline font-black text-5xl tracking-tighter text-white mb-4">Platform Ecosystem</h2>
+<p class="font-body text-on-surface-variant max-w-xl mx-auto">Seamlessly bridging the gap between cutting-edge LLMs and operational excellence.</p>
+</div>
+<div class="relative max-w-5xl mx-auto">
+<!-- Central Hub Visualization -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12 relative z-10">
+<!-- Video/Image -->
+<div class="p-8 bg-surface-container rounded-xl border border-outline-variant/10 hover:border-primary-container/40 transition-all text-center">
+<div class="w-16 h-16 bg-primary-container/20 rounded-full flex items-center justify-center mx-auto mb-6 text-primary">
+<span class="material-symbols-outlined text-3xl" data-icon="movie">movie</span>
+</div>
+<h4 class="font-headline font-bold text-white mb-4">Visual Generation</h4>
+<ul class="font-label text-xs space-y-3 text-on-surface-variant">
+<li class="flex items-center justify-center gap-2"><span class="w-1 h-1 bg-primary rounded-full"></span> Google Flow</li>
+<li class="flex items-center justify-center gap-2"><span class="w-1 h-1 bg-primary rounded-full"></span> Veo 3 Video Gen</li>
+<li class="flex items-center justify-center gap-2"><span class="w-1 h-1 bg-primary rounded-full"></span> Imagen 3 Diffusion</li>
+</ul>
+</div>
+<!-- Audio/Speech -->
+<div class="p-8 bg-surface-container rounded-xl border border-outline-variant/10 hover:border-secondary-container/40 transition-all text-center">
+<div class="w-16 h-16 bg-secondary-container/20 rounded-full flex items-center justify-center mx-auto mb-6 text-secondary-container">
+<span class="material-symbols-outlined text-3xl" data-icon="waves">waves</span>
+</div>
+<h4 class="font-headline font-bold text-white mb-4">Audio &amp; Speech</h4>
+<ul class="font-label text-xs space-y-3 text-on-surface-variant">
+<li class="flex items-center justify-center gap-2"><span class="w-1 h-1 bg-secondary rounded-full"></span> ElevenLabs TTS</li>
+<li class="flex items-center justify-center gap-2"><span class="w-1 h-1 bg-secondary rounded-full"></span> Sarvam Dubbing</li>
+<li class="flex items-center justify-center gap-2"><span class="w-1 h-1 bg-secondary rounded-full"></span> Real-time STT</li>
+</ul>
+</div>
+<!-- Collaboration -->
+<div class="p-8 bg-surface-container rounded-xl border border-outline-variant/10 hover:border-primary-fixed-dim/40 transition-all text-center">
+<div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-6 text-primary">
+<span class="material-symbols-outlined text-3xl" data-icon="forum">forum</span>
+</div>
+<h4 class="font-headline font-bold text-white mb-4">Collaboration</h4>
+<ul class="font-label text-xs space-y-3 text-on-surface-variant">
+<li class="flex items-center justify-center gap-2"><span class="w-1 h-1 bg-primary-fixed-dim rounded-full"></span> Microsoft Teams Bots</li>
+<li class="flex items-center justify-center gap-2"><span class="w-1 h-1 bg-primary-fixed-dim rounded-full"></span> Copilot Studio</li>
+<li class="flex items-center justify-center gap-2"><span class="w-1 h-1 bg-primary-fixed-dim rounded-full"></span> Slack Enterprise</li>
+</ul>
+</div>
+</div>
+<!-- Atmospheric Glows -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-primary-container/10 blur-[120px] rounded-full -z-10"></div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full border-t border-[#1D2B3D] bg-[#051425]">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 py-10 w-full gap-6 max-w-screen-2xl mx-auto">
+<div class="flex flex-col gap-2">
+<div class="font-black text-[#7A192A] text-xl flex items-center gap-2">
+<span class="w-6 h-[2px] bg-[#FA5C1C]"></span>
+                    Sovereign Intel
+                </div>
+<p class="font-['Space_Grotesk'] uppercase tracking-widest text-[10px] text-slate-500">
+                    © 2024 ICICI AMC AI Engineering. All Rights Reserved.
+                </p>
+</div>
+<div class="flex flex-wrap justify-center gap-8 font-['Space_Grotesk'] uppercase tracking-widest text-[10px]">
+<div class="flex flex-col items-center">
+<span class="text-[#FA5C1C] text-lg font-bold mb-1">100%</span>
+<span class="text-slate-500">Zero Vendor Dependency</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="text-[#FA5C1C] text-lg font-bold mb-1">80%</span>
+<span class="text-slate-500">Reduced Lead Time</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="text-[#FA5C1C] text-lg font-bold mb-1">Agentic</span>
+<span class="text-slate-500">Workflows</span>
+</div>
+</div>
+<div class="flex gap-6">
+<a class="text-slate-500 hover:text-[#FA5C1C] transition-colors ease-in-out duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="terminal">terminal</span>
+</a>
+<a class="text-slate-500 hover:text-[#FA5C1C] transition-colors ease-in-out duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="data_object">data_object</span>
+</a>
+<a class="text-slate-500 hover:text-[#FA5C1C] transition-colors ease-in-out duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="code">code</span>
+</a>
+</div>
+</div>
+</footer>
+</body></html>
