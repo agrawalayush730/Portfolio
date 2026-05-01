@@ -1,349 +1,1221 @@
 <!DOCTYPE html>
-
-<html class="dark" lang="en"><head>
+<html lang="en">
+<head>
 <meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Sovereign Intel | AI Engineering at ICICI AMC</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&amp;family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            colors: {
-              "on-secondary-container": "#511500",
-              "on-error": "#690005",
-              "secondary": "#ffb59c",
-              "surface": "#051425",
-              "surface-container": "#122032",
-              "on-background": "#d5e3fc",
-              "tertiary-fixed": "#e9ddff",
-              "on-primary-fixed": "#40000d",
-              "outline": "#a48b8b",
-              "surface-container-lowest": "#010f20",
-              "on-tertiary": "#3c0091",
-              "surface-container-low": "#0d1c2e",
-              "secondary-container": "#fa5c1c",
-              "primary-fixed": "#ffdadb",
-              "error": "#ffb4ab",
-              "inverse-on-surface": "#233144",
-              "secondary-fixed": "#ffdbcf",
-              "secondary-fixed-dim": "#ffb59c",
-              "on-secondary-fixed-variant": "#832700",
-              "surface-container-high": "#1d2b3d",
-              "primary-fixed-dim": "#ffb2b7",
-              "primary": "#ffb2b7",
-              "on-tertiary-fixed-variant": "#5516be",
-              "primary-container": "#7a192a",
-              "surface-tint": "#ffb2b7",
-              "on-secondary": "#5c1900",
-              "on-surface": "#d5e3fc",
-              "outline-variant": "#564242",
-              "on-tertiary-fixed": "#23005c",
-              "on-surface-variant": "#ddc0c0",
-              "inverse-primary": "#a43947",
-              "surface-dim": "#051425",
-              "on-tertiary-container": "#b79aff",
-              "on-primary-container": "#ff8791",
-              "on-primary": "#65061c",
-              "surface-bright": "#2c3a4d",
-              "tertiary-fixed-dim": "#d0bcff",
-              "on-error-container": "#ffdad6",
-              "tertiary-container": "#4d00b7",
-              "on-primary-fixed-variant": "#842131",
-              "surface-variant": "#283648",
-              "inverse-surface": "#d5e3fc",
-              "background": "#051425",
-              "on-secondary-fixed": "#390c00",
-              "surface-container-highest": "#283648",
-              "tertiary": "#d0bcff",
-              "error-container": "#93000a"
-            },
-            fontFamily: {
-              "headline": ["Inter"],
-              "body": ["Inter"],
-              "label": ["Space Grotesk"]
-            },
-            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
-          },
-        },
-      }
-    </script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Ayush Agrawal — AI Engineer</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet"/>
 <style>
-        body {
-            background-color: #051425;
-            color: #d5e3fc;
-            font-family: 'Inter', sans-serif;
-        }
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
-        .glass-nav {
-            backdrop-filter: blur(20px);
-            background: rgba(5, 20, 37, 0.8);
-        }
-        .bento-grid {
-            display: grid;
-            grid-template-columns: repeat(12, 1fr);
-            gap: 1.5rem;
-        }
-        .glow-hover:hover {
-            box-shadow: 0 0 20px rgba(250, 92, 28, 0.15);
-        }
-    </style>
+  :root {
+    --bg: #05070f;
+    --bg2: #080c18;
+    --surface: #0d1120;
+    --surface2: #111827;
+    --border: rgba(255,255,255,0.06);
+    --border-accent: rgba(82,163,255,0.3);
+    --text: #f0f4ff;
+    --text-muted: #7a88a8;
+    --text-dim: #3d4a62;
+    --accent: #52a3ff;
+    --accent2: #7c5cfc;
+    --accent3: #00e5c0;
+    --danger: #ff5e5e;
+    --gold: #f5c242;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* ─── NOISE OVERLAY ─── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.4;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    padding: 0 48px;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(5,7,15,0.7);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-logo {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 800;
+    font-size: 17px;
+    letter-spacing: 0.05em;
+    color: var(--text);
+    text-decoration: none;
+  }
+  .nav-logo span { color: var(--accent); }
+
+  .nav-links { display: flex; gap: 36px; list-style: none; }
+  .nav-links a {
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--text); }
+
+  .nav-cta {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--bg);
+    background: var(--accent);
+    border: none;
+    padding: 10px 24px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: opacity 0.2s, transform 0.15s;
+    clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
+  }
+  .nav-cta:hover { opacity: 0.85; transform: translateY(-1px); }
+
+  /* ─── HERO ─── */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 120px 48px 80px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(82,163,255,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(82,163,255,0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 0%, transparent 100%);
+  }
+
+  .hero-orb1 {
+    position: absolute;
+    width: 600px; height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(82,163,255,0.12) 0%, transparent 70%);
+    top: -100px; right: -100px;
+    animation: pulse 8s ease-in-out infinite;
+  }
+  .hero-orb2 {
+    position: absolute;
+    width: 400px; height: 400px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(124,92,252,0.1) 0%, transparent 70%);
+    bottom: 0; left: 200px;
+    animation: pulse 10s ease-in-out infinite reverse;
+  }
+
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.1); opacity: 0.7; }
+  }
+
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 28px;
+    position: relative;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    display: block;
+    width: 32px;
+    height: 1px;
+    background: var(--accent);
+  }
+  .live-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--accent3);
+    margin-left: 6px;
+    animation: blink 2s ease-in-out infinite;
+  }
+  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.2} }
+
+  .hero h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(52px, 7vw, 96px);
+    font-weight: 800;
+    line-height: 1.0;
+    letter-spacing: -0.03em;
+    margin-bottom: 8px;
+    position: relative;
+  }
+  .hero h1 .name-ai {
+    display: block;
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 60%, var(--accent3) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-role {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: clamp(16px, 2vw, 22px);
+    font-weight: 300;
+    color: var(--text-muted);
+    margin-bottom: 32px;
+    letter-spacing: 0.01em;
+  }
+  .hero-role strong { color: var(--text); font-weight: 500; }
+
+  .hero-desc {
+    max-width: 560px;
+    color: var(--text-muted);
+    font-size: 17px;
+    line-height: 1.8;
+    margin-bottom: 48px;
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: 48px;
+    margin-bottom: 48px;
+  }
+  .stat-item { position: relative; }
+  .stat-num {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 36px;
+    font-weight: 800;
+    color: var(--text);
+    letter-spacing: -0.02em;
+    line-height: 1;
+  }
+  .stat-num span { color: var(--accent); }
+  .stat-label {
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-top: 4px;
+  }
+
+  .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+  .btn-primary {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--bg);
+    background: var(--accent);
+    border: none;
+    padding: 14px 32px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.2s;
+    clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%);
+    display: inline-block;
+  }
+  .btn-primary:hover { background: #7fbfff; transform: translateY(-2px); }
+
+  .btn-outline {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    background: transparent;
+    border: 1px solid var(--border);
+    padding: 14px 32px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.2s;
+    display: inline-block;
+  }
+  .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* ─── SECTION COMMONS ─── */
+  section { padding: 100px 48px; max-width: 1280px; margin: 0 auto; }
+
+  .section-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .section-label::after {
+    content: '';
+    display: block;
+    height: 1px;
+    width: 40px;
+    background: var(--accent);
+    opacity: 0.5;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(32px, 4vw, 52px);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    color: var(--text);
+    margin-bottom: 16px;
+  }
+
+  .section-subtitle {
+    color: var(--text-muted);
+    font-size: 17px;
+    max-width: 540px;
+    margin-bottom: 64px;
+    line-height: 1.8;
+  }
+
+  /* ─── DIVIDER ─── */
+  .divider {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border), transparent);
+  }
+
+  /* ─── EXPERIENCE ─── */
+  .experience-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 48px;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.3s;
+    margin-bottom: 24px;
+  }
+  .experience-card:hover { border-color: var(--border-accent); }
+  .experience-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px; height: 100%;
+    background: linear-gradient(to bottom, var(--accent), var(--accent2));
+  }
+
+  .exp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+  .exp-company {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: -0.01em;
+  }
+  .exp-role {
+    font-size: 14px;
+    color: var(--accent);
+    font-weight: 500;
+    margin-top: 4px;
+    letter-spacing: 0.02em;
+  }
+  .exp-period {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: var(--text-dim);
+    padding: 6px 14px;
+    border: 1px solid var(--border);
+    letter-spacing: 0.05em;
+  }
+
+  .exp-bullets { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+  .exp-bullets li {
+    display: flex;
+    gap: 14px;
+    color: var(--text-muted);
+    font-size: 15px;
+    line-height: 1.7;
+  }
+  .exp-bullets li::before {
+    content: '→';
+    color: var(--accent);
+    flex-shrink: 0;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    margin-top: 2px;
+  }
+  .exp-bullets li strong { color: var(--text); font-weight: 500; }
+
+  .exp-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 28px;
+    padding-top: 28px;
+    border-top: 1px solid var(--border);
+  }
+  .exp-tag {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    color: var(--text-dim);
+    padding: 4px 10px;
+    border: 1px solid var(--border);
+    transition: all 0.2s;
+  }
+  .exp-tag:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* ─── PROJECTS ─── */
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .project-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 32px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s;
+    display: flex;
+    flex-direction: column;
+  }
+  .project-card:hover {
+    border-color: var(--border-accent);
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  }
+
+  .project-num {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 72px;
+    font-weight: 800;
+    color: var(--surface2);
+    position: absolute;
+    top: 16px; right: 24px;
+    line-height: 1;
+    pointer-events: none;
+    transition: color 0.3s;
+  }
+  .project-card:hover .project-num { color: rgba(82,163,255,0.08); }
+
+  .project-icon {
+    width: 44px; height: 44px;
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent);
+    margin-bottom: 20px;
+    transition: border-color 0.3s;
+  }
+  .project-card:hover .project-icon { border-color: var(--accent); }
+
+  .project-name {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 12px;
+    letter-spacing: -0.01em;
+  }
+  .project-desc {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin-bottom: 24px;
+    flex: 1;
+  }
+  .project-metric {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: var(--accent3);
+    padding: 8px 0;
+    border-top: 1px solid var(--border);
+    margin-bottom: 16px;
+    letter-spacing: 0.04em;
+  }
+  .project-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .project-tag {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.06em;
+    color: var(--text-dim);
+    padding: 3px 8px;
+    border: 1px solid var(--border);
+  }
+
+  /* ─── PLATFORMS ─── */
+  .platforms-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+  .platform-item {
+    background: var(--bg2);
+    padding: 32px 28px;
+    transition: background 0.2s;
+  }
+  .platform-item:hover { background: var(--surface); }
+  .platform-emoji { font-size: 28px; margin-bottom: 12px; }
+  .platform-icon {
+    width: 40px; height: 40px;
+    display: flex; align-items: center; justify-content: center;
+    border: 1px solid var(--border);
+    color: var(--accent);
+    margin-bottom: 16px;
+  }
+  .platform-name {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 6px;
+  }
+  .platform-desc {
+    font-size: 12px;
+    color: var(--text-dim);
+    line-height: 1.6;
+  }
+
+  /* ─── CAPABILITIES ─── */
+  .capabilities-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .capability-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 40px;
+    position: relative;
+    transition: border-color 0.3s;
+  }
+  .capability-card:hover { border-color: var(--border-accent); }
+
+  .cap-number {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--text-dim);
+    letter-spacing: 0.1em;
+    margin-bottom: 20px;
+  }
+  .cap-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 12px;
+    letter-spacing: -0.01em;
+  }
+  .cap-desc {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.8;
+  }
+  .cap-accent-line {
+    width: 32px; height: 2px;
+    background: var(--accent);
+    margin-top: 24px;
+    transition: width 0.3s;
+  }
+  .capability-card:hover .cap-accent-line { width: 64px; }
+
+  /* ─── STACK ─── */
+  .stack-section {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 64px 48px;
+    margin-bottom: 0;
+  }
+
+  .stack-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 48px;
+    margin-top: 48px;
+  }
+
+  .stack-group h4 {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .stack-items { display: flex; flex-wrap: wrap; gap: 8px; }
+  .stack-chip {
+    font-size: 13px;
+    color: var(--text-muted);
+    padding: 6px 14px;
+    border: 1px solid var(--border);
+    background: var(--bg2);
+    transition: all 0.2s;
+    cursor: default;
+  }
+  .stack-chip:hover { border-color: var(--accent); color: var(--text); background: rgba(82,163,255,0.05); }
+
+  /* ─── CERTIFICATIONS ─── */
+  .certs-row {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .cert-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 24px 32px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex: 1;
+    min-width: 260px;
+    transition: border-color 0.3s;
+  }
+  .cert-card:hover { border-color: var(--border-accent); }
+  .cert-icon {
+    width: 44px; height: 44px;
+    display: flex; align-items: center; justify-content: center;
+    border: 1px solid var(--border);
+    color: var(--accent);
+    flex-shrink: 0;
+  }
+  .cert-name {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 4px;
+    letter-spacing: -0.01em;
+  }
+  .cert-issuer {
+    font-size: 12px;
+    color: var(--text-dim);
+    letter-spacing: 0.04em;
+  }
+
+  /* ─── CONTACT ─── */
+  .contact-section {
+    background: linear-gradient(135deg, var(--surface) 0%, rgba(82,163,255,0.03) 100%);
+    border: 1px solid var(--border);
+    padding: 80px 64px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 48px;
+    flex-wrap: wrap;
+    position: relative;
+    overflow: hidden;
+  }
+  .contact-section::before {
+    content: 'CONNECT';
+    position: absolute;
+    right: 40px; bottom: -20px;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 120px;
+    font-weight: 800;
+    color: rgba(255,255,255,0.02);
+    letter-spacing: -0.04em;
+    pointer-events: none;
+  }
+  .contact-email {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(22px, 3vw, 36px);
+    font-weight: 700;
+    color: var(--text);
+    text-decoration: none;
+    transition: color 0.2s;
+    letter-spacing: -0.02em;
+  }
+  .contact-email:hover { color: var(--accent); }
+  .contact-links { display: flex; gap: 16px; }
+  .contact-link {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    text-decoration: none;
+    padding: 10px 20px;
+    border: 1px solid var(--border);
+    transition: all 0.2s;
+  }
+  .contact-link:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* ─── FOOTER ─── */
+  footer {
+    padding: 32px 48px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  footer p {
+    font-size: 12px;
+    color: var(--text-dim);
+    font-family: 'IBM Plex Mono', monospace;
+    letter-spacing: 0.06em;
+  }
+
+  /* ─── SCROLL ANIMATIONS ─── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ─── FULL-WIDTH WRAPPERS ─── */
+  .full-width { max-width: 100%; }
+  .section-inner { max-width: 1280px; margin: 0 auto; padding: 100px 48px; }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 900px) {
+    nav { padding: 0 24px; }
+    .nav-links { display: none; }
+    .hero { padding: 100px 24px 60px; }
+    .hero-stats { gap: 28px; flex-wrap: wrap; }
+    section { padding: 60px 24px; }
+    .projects-grid { grid-template-columns: 1fr; }
+    .platforms-grid { grid-template-columns: repeat(2, 1fr); }
+    .capabilities-grid { grid-template-columns: 1fr; }
+    .stack-grid { grid-template-columns: repeat(2, 1fr); gap: 28px; }
+    .experience-card { padding: 32px 24px; }
+    .contact-section { padding: 48px 32px; flex-direction: column; align-items: flex-start; }
+    footer { padding: 24px; }
+    .section-inner { padding: 60px 24px; }
+  }
+</style>
 </head>
-<body class="selection:bg-secondary-container selection:text-white">
-<!-- TopNavBar -->
-<nav class="fixed top-0 w-full z-50 bg-[#051425]/80 backdrop-blur-xl shadow-2xl shadow-[#010F20]/50">
-<div class="flex items-center justify-between px-8 py-4 max-w-screen-2xl mx-auto">
-<div class="font-['Inter'] font-black text-xl tracking-tighter text-slate-100 flex items-center gap-2">
-<span class="w-8 h-8 bg-primary-container rounded flex items-center justify-center">
-<span class="material-symbols-outlined text-white text-sm" data-icon="terminal">terminal</span>
-</span>
-                Sovereign Intel
-            </div>
-<div class="hidden md:flex items-center gap-8 font-['Inter'] font-medium tracking-tight text-sm">
-<a class="text-[#FA5C1C] font-bold" href="#">Projects</a>
-<a class="text-slate-400 hover:text-slate-100 transition-colors" href="#">Platform</a>
-<a class="text-slate-400 hover:text-slate-100 transition-colors" href="#">Impact</a>
-</div>
-<div class="flex items-center gap-4">
-<button class="px-5 py-2 rounded-xl bg-primary-container text-on-primary-container font-label font-bold text-xs uppercase tracking-widest hover:bg-secondary-container transition-all active:scale-95 duration-200 cursor-pointer">
-                    Connect
-                </button>
-</div>
-</div>
-<div class="bg-[#0D1C2E] h-[1px] w-full opacity-20"></div>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#">AYUSH<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#capabilities">Capabilities</a></li>
+    <li><a href="#stack">Stack</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a class="nav-cta" href="mailto:agrawalayush730@gmail.com">Hire Me</a>
 </nav>
-<main class="pt-24">
-<!-- Hero Section -->
-<section class="relative min-h-[819px] flex flex-col items-center justify-center px-6 overflow-hidden">
-<div class="absolute inset-0 z-0 opacity-30">
-<div class="absolute inset-0 bg-gradient-to-b from-primary-container/20 to-transparent"></div>
-<!-- Simulated Neural Connections Pattern -->
-<svg class="w-full h-full" preserveaspectratio="none" viewbox="0 0 100 100">
-<path class="text-primary opacity-20" d="M0,50 Q25,40 50,50 T100,50" fill="none" stroke="currentColor" stroke-width="0.1"></path>
-<path class="text-secondary opacity-20" d="M0,30 Q25,20 50,30 T100,30" fill="none" stroke="currentColor" stroke-width="0.1"></path>
-<path class="text-primary opacity-20" d="M0,70 Q25,60 50,70 T100,70" fill="none" stroke="currentColor" stroke-width="0.1"></path>
-</svg>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-orb1"></div>
+  <div class="hero-orb2"></div>
+
+  <div style="position:relative; z-index:2;">
+    <div class="hero-eyebrow">
+      Currently at ICICI Prudential AMC
+      <span class="live-dot"></span>
+    </div>
+
+    <h1>
+      Ayush Agrawal
+      <span class="name-ai">AI Engineer.</span>
+    </h1>
+
+    <p class="hero-role">
+      <strong>LLM Systems</strong> · Agentic Workflows · Voice AI · RAG Pipelines
+    </p>
+
+    <p class="hero-desc">
+      Building production-grade AI systems that automate real-world enterprise workflows.
+      Specialized in large language models, multi-agent orchestration, and voice-first AI
+      deployed at scale in financial services.
+    </p>
+
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-num">450<span>+</span></div>
+        <div class="stat-label">Pipelines Automated</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">1,700<span>+</span></div>
+        <div class="stat-label">Documents Processed</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">85<span>%</span></div>
+        <div class="stat-label">NLP Accuracy</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">3<span>+</span></div>
+        <div class="stat-label">Yrs Building AI</div>
+      </div>
+    </div>
+
+    <div class="hero-actions">
+      <a class="btn-primary" href="#projects">View Projects</a>
+      <a class="btn-outline" href="#contact">Get in Touch</a>
+      <a class="btn-outline" href="https://linkedin.com/in/ayush-agrawal-590254253" target="_blank">LinkedIn ↗</a>
+    </div>
+  </div>
 </div>
-<div class="relative z-10 text-center max-w-4xl">
-<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-high border border-outline-variant/15 mb-6">
-<span class="relative flex h-2 w-2">
-<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary-container opacity-75"></span>
-<span class="relative inline-flex rounded-full h-2 w-2 bg-secondary-container"></span>
-</span>
-<span class="font-label text-[10px] uppercase tracking-[0.2em] text-on-surface-variant">Engineering Sovereignty</span>
-</div>
-<h1 class="font-headline font-black text-6xl md:text-8xl tracking-tighter text-white mb-6 leading-[0.9]">
-                    AI Engineer <br/>
-<span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-container via-secondary-container to-primary-fixed-dim">@ ICICI AMC</span>
-</h1>
-<p class="font-body text-lg md:text-xl text-on-surface-variant max-w-2xl mx-auto mb-10 leading-relaxed">
-                    Architecting Agentic Workflows &amp; Generative AI Solutions for India's Leading Asset Management Firm.
-                </p>
-<div class="flex flex-col md:flex-row gap-4 justify-center items-center">
-<button class="group relative px-8 py-4 bg-primary-container rounded-xl overflow-hidden transition-all hover:shadow-[0_0_40px_-10px_rgba(250,92,28,0.5)]">
-<div class="absolute inset-0 bg-gradient-to-r from-primary-container to-secondary-container opacity-0 group-hover:opacity-100 transition-opacity"></div>
-<span class="relative z-10 font-label font-bold text-sm tracking-widest text-white uppercase">Initialize Simulation</span>
-</button>
-<button class="px-8 py-4 bg-surface-container border border-outline-variant/15 rounded-xl font-label font-bold text-sm tracking-widest text-on-surface uppercase hover:bg-surface-container-high transition-colors">
-                        Documentation
-                    </button>
-</div>
-</div>
+
+<div class="divider"></div>
+
+<!-- EXPERIENCE -->
+<section id="experience" class="reveal">
+  <div class="section-label">Professional Record</div>
+  <h2 class="section-title">Experience</h2>
+  <p class="section-subtitle">Building AI systems that ship to production and move business metrics.</p>
+
+  <!-- ICICI Pru -->
+  <div class="experience-card reveal">
+    <div class="exp-header">
+      <div>
+        <div class="exp-company">ICICI Prudential AMC</div>
+        <div class="exp-role">AI Engineer · Contracted via Blue Altair · Full-time</div>
+      </div>
+      <div class="exp-period">JUN 2025 — PRESENT</div>
+    </div>
+    <ul class="exp-bullets">
+      <li>Automated end-to-end monthly regeneration of <strong>digitalfactsheet.icicipruamc.com</strong> — eliminated a full manual rebuild every month through AI-driven pipeline orchestration and LLM-based content generation</li>
+      <li>Architected <strong>agentic n8n workflows</strong> processing 450+ investor communication mailers at scale, significantly reducing turnaround time</li>
+      <li>Built <strong>Compliance Assist & HR Assist</strong> — NLP-driven document intelligence systems across 1,500+ SEBI/AMFI regulatory documents and 200+ HR guidelines; semantic search and compliance validation</li>
+      <li>Engineered <strong>AI voice bot for SIP renewals</strong> using LiveKit, ElevenLabs (TTS), Sarvam AI (STT), and Gemini LLM — fully automated outbound investor communication</li>
+      <li>Built AI-powered <strong>marketing portal</strong> for automated landing page generation using LangChain, RAG pipelines, and Azure OpenAI</li>
+      <li>Onboarded and integrated enterprise AI platforms: ElevenLabs, Sarvam Dubbing Studio, Google Flow, and Copilot Studio — reducing vendor dependency and operational costs</li>
+    </ul>
+    <div class="exp-tags">
+      <span class="exp-tag">n8n</span>
+      <span class="exp-tag">LangChain</span>
+      <span class="exp-tag">RAG</span>
+      <span class="exp-tag">LiveKit</span>
+      <span class="exp-tag">ElevenLabs</span>
+      <span class="exp-tag">Sarvam AI</span>
+      <span class="exp-tag">Gemini</span>
+      <span class="exp-tag">Azure OpenAI</span>
+      <span class="exp-tag">FastAPI</span>
+      <span class="exp-tag">Vector DB</span>
+      <span class="exp-tag">Copilot Studio</span>
+    </div>
+  </div>
+
+  <!-- FactSet -->
+  <div class="experience-card reveal" style="--accent: #7c5cfc;">
+    <div class="exp-header">
+      <div>
+        <div class="exp-company">FactSet</div>
+        <div class="exp-role" style="color: var(--accent2);">AI/ML Engineering Intern</div>
+      </div>
+      <div class="exp-period">MAY 2024 — JUL 2024</div>
+    </div>
+    <ul class="exp-bullets">
+      <li>Developed NLP pipeline (LangChain + BERT) to analyze <strong>500+ meeting transcripts</strong> — automated extraction of key themes, action items, and sentiment trends, reducing manual review by ~70%</li>
+      <li>Applied GPT-3.5 for topic modeling and key business insight extraction; sentiment analysis across all transcripts</li>
+      <li>Built interactive dashboards in <strong>Tableau and Power BI</strong> surfacing actionable insights for senior stakeholders</li>
+    </ul>
+    <div class="exp-tags">
+      <span class="exp-tag">LangChain</span>
+      <span class="exp-tag">BERT</span>
+      <span class="exp-tag">GPT-3.5</span>
+      <span class="exp-tag">Tableau</span>
+      <span class="exp-tag">Power BI</span>
+      <span class="exp-tag">Python</span>
+    </div>
+  </div>
+
+  <!-- QMUL -->
+  <div class="experience-card reveal" style="--accent: #00e5c0;">
+    <div class="exp-header">
+      <div>
+        <div class="exp-company">Queen Mary University of London</div>
+        <div class="exp-role" style="color: var(--accent3);">Data Science Research Intern · Remote</div>
+      </div>
+      <div class="exp-period">JUN 2023 — AUG 2023</div>
+    </div>
+    <ul class="exp-bullets">
+      <li>Applied <strong>LDA topic modeling</strong> on hydrogen energy research datasets to identify emerging research trends</li>
+      <li>Implemented TF-IDF term ranking and coherence testing; delivered findings through academic-style reports to faculty</li>
+    </ul>
+    <div class="exp-tags">
+      <span class="exp-tag">LDA</span>
+      <span class="exp-tag">NLP</span>
+      <span class="exp-tag">Topic Modeling</span>
+      <span class="exp-tag">Python</span>
+      <span class="exp-tag">NLTK</span>
+      <span class="exp-tag">Pandas</span>
+    </div>
+  </div>
 </section>
-<!-- Featured Project Bento Grid -->
-<section class="max-w-screen-2xl mx-auto px-8 py-24">
-<div class="flex justify-between items-end mb-12">
-<div>
-<h2 class="font-headline font-extrabold text-4xl tracking-tighter text-white mb-2">Core 4 Integrations</h2>
-<p class="font-label text-sm text-on-surface-variant uppercase tracking-widest">Production-grade Agentic Architectures</p>
-</div>
-<div class="hidden md:block h-[1px] flex-grow mx-12 bg-outline-variant/15"></div>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-12 gap-6 auto-rows-[280px]">
-<!-- Compliance Assist (RAG) -->
-<div class="md:col-span-8 bg-surface-container-low rounded-xl p-8 flex flex-col justify-between group overflow-hidden relative">
-<div class="absolute top-0 right-0 w-1/2 h-full opacity-10 group-hover:opacity-20 transition-opacity">
-<img alt="complex visual representation of a document vector store and retrieval process" class="w-full h-full object-cover grayscale brightness-50" data-alt="abstract visual of interconnected nodes and glowing data points representing a RAG architecture and document storage" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB50iVXTp0PqZPFkUPDFmcnwl2OXy4ap1O7f8ClLC8z6UiKAr-GN35FG9JkVEuUoxtN4nxItZMprrhFMSAX7HdpcNb-mRvfTMd-0C7QTKiMgzVdApn9d7kEkGABPFPojqgpM8f1qN0d_34XGxA4Lhz5RZZe5bg7Me5NNPt7XYwlNDsoc3a_kndh90uFwry6MRidiNBchSQou5yYUDtQYemHji0bI4psyXuRmMHz0VfcxxtmsBkCwfcXRMYrREi4ICo1-h7HsC5KfJxj"/>
-</div>
-<div>
-<div class="flex items-center gap-3 mb-4">
-<span class="material-symbols-outlined text-secondary-container" data-icon="security">security</span>
-<span class="font-label text-xs uppercase tracking-widest text-secondary-container">LegalTech / RAG</span>
-</div>
-<h3 class="font-headline font-bold text-3xl text-white mb-4 tracking-tight">Compliance Assist</h3>
-<p class="font-body text-on-surface-variant max-w-md">
-                            Autonomous text extraction and analysis over 1,500+ SEBI regulatory documents. Optimized for precision and zero-hallucination outputs.
-                        </p>
-</div>
-<div class="flex gap-4 items-center">
-<span class="px-3 py-1 bg-surface-container-high rounded-full font-label text-[10px] text-white">Google File Search Store</span>
-<span class="px-3 py-1 bg-surface-container-high rounded-full font-label text-[10px] text-white">Gemini Pro</span>
-</div>
-</div>
-<!-- Marketing Automation -->
-<div class="md:col-span-4 bg-surface-container rounded-xl p-8 flex flex-col justify-between hover:bg-surface-container-high transition-colors cursor-pointer">
-<div>
-<div class="flex items-center gap-3 mb-4">
-<span class="material-symbols-outlined text-primary-container" data-icon="campaign">campaign</span>
-</div>
-<h3 class="font-headline font-bold text-xl text-white mb-2 tracking-tight">Marketing Portal</h3>
-<p class="font-body text-sm text-on-surface-variant">
-                            Full-stack GenAI engine for Investor Communications.
-                        </p>
-</div>
-<div class="space-y-4">
-<div class="flex gap-2 flex-wrap">
-<span class="px-2 py-1 bg-surface-container-low rounded font-label text-[10px] text-on-surface-variant">LangChain</span>
-<span class="px-2 py-1 bg-surface-container-low rounded font-label text-[10px] text-on-surface-variant">Python</span>
-</div>
-</div>
-</div>
-<!-- Agentic UI/UX (n8n) -->
-<div class="md:col-span-4 bg-surface-container rounded-xl p-8 flex flex-col justify-between border-t border-transparent hover:border-secondary-container/30 transition-all">
-<div>
-<div class="flex items-center gap-3 mb-4">
-<span class="material-symbols-outlined text-secondary-container" data-icon="hub">hub</span>
-</div>
-<h3 class="font-headline font-bold text-xl text-white mb-2 tracking-tight">Agentic UI/UX</h3>
-<p class="font-body text-sm text-on-surface-variant">
-                            Automated enhancement of 450+ client mailers via agentic workflows. Reduced manual review time by 95%.
-                        </p>
-</div>
-<div class="flex items-center justify-between">
-<span class="font-label text-[10px] text-secondary-container uppercase font-bold tracking-widest">n8n Orchestration</span>
-<span class="material-symbols-outlined text-on-surface-variant text-sm" data-icon="arrow_forward">arrow_forward</span>
-</div>
-</div>
-<!-- Outbound SIP Voice Bot -->
-<div class="md:col-span-8 bg-surface-container-highest rounded-xl p-8 flex flex-col md:flex-row gap-8 items-center relative overflow-hidden">
-<div class="flex-1 z-10">
-<div class="flex items-center gap-3 mb-4">
-<span class="material-symbols-outlined text-[#FFB2B7]" data-icon="settings_voice">settings_voice</span>
-<span class="font-label text-xs uppercase tracking-widest text-primary-fixed-dim">Real-time Conversational AI</span>
-</div>
-<h3 class="font-headline font-bold text-3xl text-white mb-4 tracking-tight">Outbound SIP Bot</h3>
-<p class="font-body text-on-surface-variant mb-6">
-                            Human-like voice agent for SIP renewals. Handles real-time objections and complex financial queries in 8 regional languages.
-                        </p>
-<div class="grid grid-cols-2 gap-4">
-<div class="flex items-center gap-2">
-<div class="w-1 h-1 rounded-full bg-secondary"></div>
-<span class="font-label text-[11px] text-white">Livekit WebRTC</span>
-</div>
-<div class="flex items-center gap-2">
-<div class="w-1 h-1 rounded-full bg-secondary"></div>
-<span class="font-label text-[11px] text-white">ElevenLabs TTS</span>
-</div>
-<div class="flex items-center gap-2">
-<div class="w-1 h-1 rounded-full bg-secondary"></div>
-<span class="font-label text-[11px] text-white">Gemini 1.5 Flash</span>
-</div>
-<div class="flex items-center gap-2">
-<div class="w-1 h-1 rounded-full bg-secondary"></div>
-<span class="font-label text-[11px] text-white">Sarvam AI</span>
-</div>
-</div>
-</div>
-<div class="hidden md:block w-48 h-48 bg-gradient-to-br from-primary-container/40 to-secondary-container/20 rounded-full blur-3xl absolute -right-10 -bottom-10"></div>
-</div>
-</div>
+
+<div class="divider"></div>
+
+<!-- PROJECTS -->
+<section id="projects" class="reveal">
+  <div class="section-label">Technical Portfolio</div>
+  <h2 class="section-title">Selected Projects</h2>
+  <p class="section-subtitle">Production-grade systems with measurable outcomes.</p>
+
+  <div class="projects-grid">
+    <div class="project-card reveal">
+      <div class="project-num">01</div>
+      <div class="project-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+      </div>
+      <div class="project-name">Mutual Fund NLP Chatbot</div>
+      <div class="project-desc">BERT-based intent classification and NER system for financial queries. Microservices architecture via FastAPI with custom domain-specific training data and JWT authentication.</div>
+      <div class="project-metric">85% classification accuracy</div>
+      <div class="project-tags">
+        <span class="project-tag">BERT</span>
+        <span class="project-tag">FastAPI</span>
+        <span class="project-tag">RAG</span>
+        <span class="project-tag">FAISS</span>
+        <span class="project-tag">MySQL</span>
+        <span class="project-tag">JWT</span>
+      </div>
+    </div>
+
+    <div class="project-card reveal">
+      <div class="project-num">02</div>
+      <div class="project-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+      </div>
+      <div class="project-name">FeedbackAI</div>
+      <div class="project-desc">NLP pipeline converting raw user feedback into structured JSON insights using zero-shot classification and SentenceTransformers. Full analytics dashboard with sentiment, category, and aspect-level breakdowns.</div>
+      <div class="project-metric">10,000+ entries processed in &lt;60s</div>
+      <div class="project-tags">
+        <span class="project-tag">Hugging Face</span>
+        <span class="project-tag">FastAPI</span>
+        <span class="project-tag">spaCy</span>
+        <span class="project-tag">MongoDB</span>
+        <span class="project-tag">Chart.js</span>
+      </div>
+    </div>
+
+    <div class="project-card reveal">
+      <div class="project-num">03</div>
+      <div class="project-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+      </div>
+      <div class="project-name">NIFTY50 Backtest Engine</div>
+      <div class="project-desc">Backtrader-based backtesting system for MA Crossover and Bollinger Band strategies over 10 years of NIFTY50 data. Parameter optimization grid search with full PnL and drawdown analytics.</div>
+      <div class="project-metric">Sharpe ratio 1.8 · +12% vs buy-and-hold</div>
+      <div class="project-tags">
+        <span class="project-tag">Python</span>
+        <span class="project-tag">Backtrader</span>
+        <span class="project-tag">Pandas</span>
+        <span class="project-tag">Matplotlib</span>
+        <span class="project-tag">yFinance</span>
+      </div>
+    </div>
+  </div>
 </section>
-<!-- Platform Ecosystem Section -->
-<section class="bg-surface-container-lowest py-24 relative overflow-hidden">
-<div class="max-w-screen-2xl mx-auto px-8">
-<div class="text-center mb-20">
-<h2 class="font-headline font-black text-5xl tracking-tighter text-white mb-4">Platform Ecosystem</h2>
-<p class="font-body text-on-surface-variant max-w-xl mx-auto">Seamlessly bridging the gap between cutting-edge LLMs and operational excellence.</p>
+
+<div class="divider"></div>
+
+<!-- PLATFORMS ENABLED -->
+<div class="full-width" style="background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+  <div class="section-inner reveal">
+    <div class="section-label">Enterprise Integrations</div>
+    <h2 class="section-title">Platforms Onboarded & Enabled</h2>
+    <p class="section-subtitle" style="margin-bottom: 48px;">End-to-end deployment and integration of enterprise AI platforms at ICICI Prudential AMC.</p>
+
+    <div class="platforms-grid">
+      <div class="platform-item">
+        <div class="platform-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+        </div>
+        <div class="platform-name">ElevenLabs</div>
+        <div class="platform-desc">Text-to-speech for voice bot; high-quality investor-facing audio generation</div>
+      </div>
+      <div class="platform-item">
+        <div class="platform-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </div>
+        <div class="platform-name">Sarvam AI</div>
+        <div class="platform-desc">Hindi/English speech-to-text for SIP renewal voice bot; regional language support</div>
+      </div>
+      <div class="platform-item">
+        <div class="platform-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+        </div>
+        <div class="platform-name">Sarvam Dubbing Studio</div>
+        <div class="platform-desc">AI-powered multilingual dubbing for investor communication content</div>
+      </div>
+      <div class="platform-item">
+        <div class="platform-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8m-4-4v4"/></svg>
+        </div>
+        <div class="platform-name">Copilot Studio</div>
+        <div class="platform-desc">Internal automation bots for Microsoft Teams; cross-team workflow automation</div>
+      </div>
+      <div class="platform-item">
+        <div class="platform-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <div class="platform-name">Google Flow</div>
+        <div class="platform-desc">Gemini-powered workflow orchestration for marketing content generation</div>
+      </div>
+      <div class="platform-item">
+        <div class="platform-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+        </div>
+        <div class="platform-name">LiveKit</div>
+        <div class="platform-desc">Real-time audio/video transport layer for the AI voice bot infrastructure</div>
+      </div>
+      <div class="platform-item">
+        <div class="platform-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/></svg>
+        </div>
+        <div class="platform-name">n8n</div>
+        <div class="platform-desc">Agentic workflow orchestration; 450+ investor mailer pipelines automated</div>
+      </div>
+      <div class="platform-item">
+        <div class="platform-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9z"/></svg>
+        </div>
+        <div class="platform-name">Azure OpenAI</div>
+        <div class="platform-desc">Enterprise GPT-4 deployment for compliant, private LLM inference at scale</div>
+      </div>
+    </div>
+  </div>
 </div>
-<div class="relative max-w-5xl mx-auto">
-<!-- Central Hub Visualization -->
-<div class="grid grid-cols-1 md:grid-cols-3 gap-12 relative z-10">
-<!-- Video/Image -->
-<div class="p-8 bg-surface-container rounded-xl border border-outline-variant/10 hover:border-primary-container/40 transition-all text-center">
-<div class="w-16 h-16 bg-primary-container/20 rounded-full flex items-center justify-center mx-auto mb-6 text-primary">
-<span class="material-symbols-outlined text-3xl" data-icon="movie">movie</span>
-</div>
-<h4 class="font-headline font-bold text-white mb-4">Visual Generation</h4>
-<ul class="font-label text-xs space-y-3 text-on-surface-variant">
-<li class="flex items-center justify-center gap-2"><span class="w-1 h-1 bg-primary rounded-full"></span> Google Flow</li>
-<li class="flex items-center justify-center gap-2"><span class="w-1 h-1 bg-primary rounded-full"></span> Veo 3 Video Gen</li>
-<li class="flex items-center justify-center gap-2"><span class="w-1 h-1 bg-primary rounded-full"></span> Imagen 3 Diffusion</li>
-</ul>
-</div>
-<!-- Audio/Speech -->
-<div class="p-8 bg-surface-container rounded-xl border border-outline-variant/10 hover:border-secondary-container/40 transition-all text-center">
-<div class="w-16 h-16 bg-secondary-container/20 rounded-full flex items-center justify-center mx-auto mb-6 text-secondary-container">
-<span class="material-symbols-outlined text-3xl" data-icon="waves">waves</span>
-</div>
-<h4 class="font-headline font-bold text-white mb-4">Audio &amp; Speech</h4>
-<ul class="font-label text-xs space-y-3 text-on-surface-variant">
-<li class="flex items-center justify-center gap-2"><span class="w-1 h-1 bg-secondary rounded-full"></span> ElevenLabs TTS</li>
-<li class="flex items-center justify-center gap-2"><span class="w-1 h-1 bg-secondary rounded-full"></span> Sarvam Dubbing</li>
-<li class="flex items-center justify-center gap-2"><span class="w-1 h-1 bg-secondary rounded-full"></span> Real-time STT</li>
-</ul>
-</div>
-<!-- Collaboration -->
-<div class="p-8 bg-surface-container rounded-xl border border-outline-variant/10 hover:border-primary-fixed-dim/40 transition-all text-center">
-<div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-6 text-primary">
-<span class="material-symbols-outlined text-3xl" data-icon="forum">forum</span>
-</div>
-<h4 class="font-headline font-bold text-white mb-4">Collaboration</h4>
-<ul class="font-label text-xs space-y-3 text-on-surface-variant">
-<li class="flex items-center justify-center gap-2"><span class="w-1 h-1 bg-primary-fixed-dim rounded-full"></span> Microsoft Teams Bots</li>
-<li class="flex items-center justify-center gap-2"><span class="w-1 h-1 bg-primary-fixed-dim rounded-full"></span> Copilot Studio</li>
-<li class="flex items-center justify-center gap-2"><span class="w-1 h-1 bg-primary-fixed-dim rounded-full"></span> Slack Enterprise</li>
-</ul>
-</div>
-</div>
-<!-- Atmospheric Glows -->
-<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-primary-container/10 blur-[120px] rounded-full -z-10"></div>
-</div>
-</div>
+
+<!-- CAPABILITIES -->
+<section id="capabilities" class="reveal">
+  <div class="section-label">Core Competencies</div>
+  <h2 class="section-title">What I Build</h2>
+  <p class="section-subtitle">End-to-end AI engineering across the full production lifecycle.</p>
+
+  <div class="capabilities-grid">
+    <div class="capability-card reveal">
+      <div class="cap-number">01 / AGENTIC AI</div>
+      <div class="cap-title">Multi-Agent Orchestration</div>
+      <div class="cap-desc">Designing autonomous agent systems using LangChain, n8n, and custom orchestration layers. Agents that reason, plan, and execute complex multi-step business logic without human intervention.</div>
+      <div class="cap-accent-line"></div>
+    </div>
+
+    <div class="capability-card reveal">
+      <div class="cap-number">02 / RAG SYSTEMS</div>
+      <div class="cap-title">Retrieval-Augmented Generation</div>
+      <div class="cap-desc">Building proprietary knowledge retrieval pipelines with vector databases (FAISS, pgvector), semantic chunking strategies, and re-ranking layers for high-accuracy, grounded LLM outputs.</div>
+      <div class="cap-accent-line"></div>
+    </div>
+
+    <div class="capability-card reveal">
+      <div class="cap-number">03 / VOICE AI</div>
+      <div class="cap-title">Conversational Voice Systems</div>
+      <div class="cap-desc">End-to-end voice AI pipelines integrating STT (Sarvam AI), LLM reasoning (Gemini), and TTS (ElevenLabs) via LiveKit transport. Real-time, low-latency systems deployed for enterprise outbound communication.</div>
+      <div class="cap-accent-line"></div>
+    </div>
+
+    <div class="capability-card reveal">
+      <div class="cap-number">04 / NLP ENGINEERING</div>
+      <div class="cap-title">Document Intelligence & NLP</div>
+      <div class="cap-desc">BERT-based NER, intent classification, sentiment analysis, and topic modeling at scale. Production NLP systems for compliance document processing, feedback analysis, and financial query parsing.</div>
+      <div class="cap-accent-line"></div>
+    </div>
+  </div>
 </section>
-</main>
-<!-- Footer -->
-<footer class="w-full border-t border-[#1D2B3D] bg-[#051425]">
-<div class="flex flex-col md:flex-row justify-between items-center px-12 py-10 w-full gap-6 max-w-screen-2xl mx-auto">
-<div class="flex flex-col gap-2">
-<div class="font-black text-[#7A192A] text-xl flex items-center gap-2">
-<span class="w-6 h-[2px] bg-[#FA5C1C]"></span>
-                    Sovereign Intel
-                </div>
-<p class="font-['Space_Grotesk'] uppercase tracking-widest text-[10px] text-slate-500">
-                    © 2024 ICICI AMC AI Engineering. All Rights Reserved.
-                </p>
+
+<div class="divider"></div>
+
+<!-- TECH STACK -->
+<div class="full-width" style="background: var(--surface);">
+  <div class="section-inner reveal" id="stack">
+    <div class="section-label">The Toolkit</div>
+    <h2 class="section-title">Tech Stack</h2>
+
+    <div class="stack-grid">
+      <div class="stack-group">
+        <h4>LLM / AI Models</h4>
+        <div class="stack-items">
+          <span class="stack-chip">Gemini Pro</span>
+          <span class="stack-chip">GPT-4o</span>
+          <span class="stack-chip">Azure OpenAI</span>
+          <span class="stack-chip">Claude 3.5</span>
+          <span class="stack-chip">Llama 3</span>
+          <span class="stack-chip">BERT</span>
+        </div>
+      </div>
+      <div class="stack-group">
+        <h4>Frameworks</h4>
+        <div class="stack-items">
+          <span class="stack-chip">LangChain</span>
+          <span class="stack-chip">FastAPI</span>
+          <span class="stack-chip">PyTorch</span>
+          <span class="stack-chip">Hugging Face</span>
+          <span class="stack-chip">n8n</span>
+          <span class="stack-chip">LiveKit</span>
+          <span class="stack-chip">spaCy</span>
+        </div>
+      </div>
+      <div class="stack-group">
+        <h4>Cloud & DevOps</h4>
+        <div class="stack-items">
+          <span class="stack-chip">AWS</span>
+          <span class="stack-chip">Azure</span>
+          <span class="stack-chip">Google Cloud</span>
+          <span class="stack-chip">Docker</span>
+          <span class="stack-chip">Git</span>
+        </div>
+      </div>
+      <div class="stack-group">
+        <h4>Databases</h4>
+        <div class="stack-items">
+          <span class="stack-chip">PostgreSQL</span>
+          <span class="stack-chip">MongoDB</span>
+          <span class="stack-chip">FAISS</span>
+          <span class="stack-chip">pgvector</span>
+          <span class="stack-chip">MySQL</span>
+          <span class="stack-chip">ChromaDB</span>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-<div class="flex flex-wrap justify-center gap-8 font-['Space_Grotesk'] uppercase tracking-widest text-[10px]">
-<div class="flex flex-col items-center">
-<span class="text-[#FA5C1C] text-lg font-bold mb-1">100%</span>
-<span class="text-slate-500">Zero Vendor Dependency</span>
-</div>
-<div class="flex flex-col items-center">
-<span class="text-[#FA5C1C] text-lg font-bold mb-1">80%</span>
-<span class="text-slate-500">Reduced Lead Time</span>
-</div>
-<div class="flex flex-col items-center">
-<span class="text-[#FA5C1C] text-lg font-bold mb-1">Agentic</span>
-<span class="text-slate-500">Workflows</span>
-</div>
-</div>
-<div class="flex gap-6">
-<a class="text-slate-500 hover:text-[#FA5C1C] transition-colors ease-in-out duration-300" href="#">
-<span class="material-symbols-outlined" data-icon="terminal">terminal</span>
-</a>
-<a class="text-slate-500 hover:text-[#FA5C1C] transition-colors ease-in-out duration-300" href="#">
-<span class="material-symbols-outlined" data-icon="data_object">data_object</span>
-</a>
-<a class="text-slate-500 hover:text-[#FA5C1C] transition-colors ease-in-out duration-300" href="#">
-<span class="material-symbols-outlined" data-icon="code">code</span>
-</a>
-</div>
-</div>
+
+<!-- CERTIFICATIONS -->
+<section class="reveal">
+  <div class="section-label">Verified Credentials</div>
+  <h2 class="section-title">Certifications</h2>
+  <div class="certs-row" style="margin-top: 0;">
+    <div class="cert-card">
+      <div class="cert-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9z"/></svg>
+      </div>
+      <div>
+        <div class="cert-name">AWS Certified Cloud Practitioner</div>
+        <div class="cert-issuer">Amazon Web Services</div>
+      </div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9z"/></svg>
+      </div>
+      <div>
+        <div class="cert-name">Azure Fundamentals AZ-900</div>
+        <div class="cert-issuer">Microsoft</div>
+      </div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+      </div>
+      <div>
+        <div class="cert-name">Transformers & NLP Specialization</div>
+        <div class="cert-issuer">DeepLearning.AI</div>
+      </div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+      </div>
+      <div>
+        <div class="cert-name">Text Embeddings</div>
+        <div class="cert-issuer">DeepLearning.AI · May 2024</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CONTACT -->
+<section id="contact" style="padding-bottom: 0;">
+  <div class="contact-section reveal">
+    <div>
+      <div class="section-label">Open to Opportunities</div>
+      <a class="contact-email" href="mailto:agrawalayush730@gmail.com">agrawalayush730@gmail.com</a>
+      <p style="color: var(--text-dim); font-size: 13px; margin-top: 12px; font-family: 'IBM Plex Mono', monospace; letter-spacing: 0.06em;">Mumbai, India · Available for AI Engineer roles</p>
+    </div>
+    <div class="contact-links">
+      <a class="contact-link" href="https://linkedin.com/in/ayush-agrawal-590254253" target="_blank">LinkedIn ↗</a>
+      <a class="contact-link" href="https://github.com/agrawalayush730" target="_blank">GitHub ↗</a>
+      <a class="contact-link" href="tel:+919717097675">+91-9717097675</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2025 AYUSH AGRAWAL · AYUSHAGRAWAL.CO.IN</p>
+  <p>AI ENGINEER · MUMBAI, INDIA</p>
 </footer>
-</body></html>
+
+<script>
+  // Reveal on scroll
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08 });
+  reveals.forEach(el => observer.observe(el));
+
+  // Nav active state
+  const sections = document.querySelectorAll('section[id], div[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 100) current = s.id;
+    });
+    navLinks.forEach(a => {
+      a.style.color = a.getAttribute('href') === '#' + current ? 'var(--accent)' : '';
+    });
+  });
+</script>
+</body>
+</html>
