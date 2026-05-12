@@ -1358,46 +1358,50 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </footer>
 #include sitemap.xml, robots 
 <script>
-  // Decode and display email on page load
-  document.addEventListener('DOMContentLoaded', function() {
+  // Performance-optimized initialization
+  const initPage = () => {
+    // Decode and display email
     const emailDisplay = document.getElementById('email-display');
     if (emailDisplay) {
       emailDisplay.textContent = atob('YWdyYXdhbGF5dXNoNzMwQGdtYWlsLmNvbQ==');
     }
-  });
 
-  // Decode and display email on page load
-  document.addEventListener('DOMContentLoaded', function() {
-    const emailDisplay = document.getElementById('email-display');
-    if (emailDisplay) {
-      emailDisplay.textContent = atob('YWdyYXdhbGF5dXNoNzMwQGdtYWlsLmNvbQ==');
-    }
-  });
+    // Setup reveal on scroll with Intersection Observer
+    const reveals = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 80);
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08 });
+    reveals.forEach(el => revealObserver.observe(el));
 
-  // Reveal on scroll
-  const reveals = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry, i) => {
-      if (entry.isIntersecting) {
-        setTimeout(() => entry.target.classList.add('visible'), i * 80);
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.08 });
-  reveals.forEach(el => observer.observe(el));
+    // Nav active state using Intersection Observer (avoids forced reflows)
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-links a');
+    
+    const navObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.id;
+          navLinks.forEach(link => {
+            link.style.color = link.getAttribute('href') === '#' + id ? 'var(--accent)' : '';
+          });
+        }
+      });
+    }, { threshold: 0.5 });
+    
+    sections.forEach(section => navObserver.observe(section));
+  };
 
-  // Nav active state
-  const sections = document.querySelectorAll('section[id], div[id]');
-  const navLinks = document.querySelectorAll('.nav-links a');
-  window.addEventListener('scroll', () => {
-    let current = '';
-    sections.forEach(s => {
-      if (window.scrollY >= s.offsetTop - 100) current = s.id;
-    });
-    navLinks.forEach(a => {
-      a.style.color = a.getAttribute('href') === '#' + current ? 'var(--accent)' : '';
-    });
-  });
+  // Defer initialization until DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initPage);
+  } else {
+    initPage();
+  }
 </script>
 </body>
 </html>
